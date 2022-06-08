@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileUpdate.Android", "CompassMobileUpdate\CompassMobileUpdate.Android\CompassMobileUpdate.Android.csproj", "{A7909449-1749-44CF-B753-681750DBDAC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileUpdate.iOS", "CompassMobileUpdate\CompassMobileUpdate.iOS\CompassMobileUpdate.iOS.csproj", "{42AD997F-2A15-41B3-A732-246A5A63350B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileUpdate", "CompassMobileUpdate\CompassMobileUpdate\CompassMobileUpdate.csproj", "{8FC25DD0-7E96-4217-8866-7AB761451119}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|Any CPU = Release|Any CPU
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|iPhone.Build.0 = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{A7909449-1749-44CF-B753-681750DBDAC7}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|Any CPU.Build.0 = Debug|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|Any CPU.Deploy.0 = Debug|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|iPhone.Deploy.0 = Debug|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|Any CPU.Deploy.0 = Release|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|iPhone.Build.0 = Release|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|iPhone.Deploy.0 = Release|iPhone
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{42AD997F-2A15-41B3-A732-246A5A63350B}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhone.Build.0 = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4392D24B-E54B-42F2-85A2-2AA51CD3ED70}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2013.exeloncorp.com:8080/tfs/cercollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CompassMobileUpdate\\CompassMobileUpdate.Android\\CompassMobileUpdate.Android.csproj
+		SccProjectName1 = CompassMobileUpdate/CompassMobileUpdate.Android
+		SccLocalPath1 = CompassMobileUpdate\\CompassMobileUpdate.Android
+		SccProjectUniqueName2 = CompassMobileUpdate\\CompassMobileUpdate.iOS\\CompassMobileUpdate.iOS.csproj
+		SccProjectName2 = CompassMobileUpdate/CompassMobileUpdate.iOS
+		SccLocalPath2 = CompassMobileUpdate\\CompassMobileUpdate.iOS
+		SccProjectUniqueName3 = CompassMobileUpdate\\CompassMobileUpdate\\CompassMobileUpdate.csproj
+		SccProjectName3 = CompassMobileUpdate/CompassMobileUpdate
+		SccLocalPath3 = CompassMobileUpdate\\CompassMobileUpdate
+	EndGlobalSection
+EndGlobal
