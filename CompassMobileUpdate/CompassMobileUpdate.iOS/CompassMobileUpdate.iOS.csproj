@@ -137,4 +137,7 @@
       <Name>CompassMobileUpdate</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\comed_logo_hrz_sm_wht_rgb.png" />
+  </ItemGroup>
 </Project>

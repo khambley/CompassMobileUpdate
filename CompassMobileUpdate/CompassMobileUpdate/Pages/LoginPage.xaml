@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CompassMobileUpdate.Pages.LoginPage"
+             BackgroundColor="#CC0033">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start">
+            <Image HeightRequest="300"
+                   WidthRequest="300"
+                   Source="comed_logo_hrz_sm_wht_rgb.png"
+                   HorizontalOptions="Center" />
+            <StackLayout Margin="20">
+                <Entry Placeholder="Exelon ID" />
+                <Entry Placeholder="Exelon Password" IsPassword="True" />
+                <Button Text="Login" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
