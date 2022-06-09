@@ -12,7 +12,13 @@
             <StackLayout Margin="20">
                 <Entry Placeholder="Exelon ID" />
                 <Entry Placeholder="Exelon Password" IsPassword="True" />
-                <Button Text="Login" />
+                <Button Text="Login"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="LightGray"
+                        TextColor="#CC0033"
+                        FontAttributes="Bold"
+                        Margin="0,20,0,0"
+                        />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

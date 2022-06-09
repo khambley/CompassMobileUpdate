@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -90,7 +89,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CompassMobileUpdate\CompassMobileUpdate.csproj">
-      <Project>{AAF841FE-D963-4438-8AB2-F2C31B3A48ED}</Project>
+      <Project>{8FC25DD0-7E96-4217-8866-7AB761451119}</Project>
       <Name>CompassMobileUpdate</Name>
     </ProjectReference>
   </ItemGroup>
