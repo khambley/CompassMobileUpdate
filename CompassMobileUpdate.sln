@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileUpdate.Android
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileUpdate.iOS", "CompassMobileUpdate\CompassMobileUpdate.iOS\CompassMobileUpdate.iOS.csproj", "{42AD997F-2A15-41B3-A732-246A5A63350B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileUpdate", "CompassMobileUpdate\CompassMobileUpdate\CompassMobileUpdate.csproj", "{8FC25DD0-7E96-4217-8866-7AB761451119}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompassMobileUpdate", "CompassMobileUpdate\CompassMobileUpdate\CompassMobileUpdate.csproj", "{8FC25DD0-7E96-4217-8866-7AB761451119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassMobileModels", "CompassMobileModels\CompassMobileModels.csproj", "{0D05403F-DB01-4287-A9A8-DCA915C09374}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,26 +75,23 @@ Global
 		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{8FC25DD0-7E96-4217-8866-7AB761451119}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Release|iPhone.Build.0 = Release|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0D05403F-DB01-4287-A9A8-DCA915C09374}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4392D24B-E54B-42F2-85A2-2AA51CD3ED70}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs2013.exeloncorp.com:8080/tfs/cercollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CompassMobileUpdate\\CompassMobileUpdate.Android\\CompassMobileUpdate.Android.csproj
-		SccProjectName1 = CompassMobileUpdate/CompassMobileUpdate.Android
-		SccLocalPath1 = CompassMobileUpdate\\CompassMobileUpdate.Android
-		SccProjectUniqueName2 = CompassMobileUpdate\\CompassMobileUpdate.iOS\\CompassMobileUpdate.iOS.csproj
-		SccProjectName2 = CompassMobileUpdate/CompassMobileUpdate.iOS
-		SccLocalPath2 = CompassMobileUpdate\\CompassMobileUpdate.iOS
-		SccProjectUniqueName3 = CompassMobileUpdate\\CompassMobileUpdate\\CompassMobileUpdate.csproj
-		SccProjectName3 = CompassMobileUpdate/CompassMobileUpdate
-		SccLocalPath3 = CompassMobileUpdate\\CompassMobileUpdate
 	EndGlobalSection
 EndGlobal

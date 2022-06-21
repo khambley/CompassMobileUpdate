@@ -2,21 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompassMobileUpdate.Pages.LoginPage"
-             BackgroundColor="#CC0033">
+             BackgroundColor="#CC0033"
+             xmlns:viewModels="clr-namespace:CompassMobileUpdate.ViewModels">
+
     <ContentPage.Content>
         <StackLayout VerticalOptions="Start">
             <Image HeightRequest="300"
                    WidthRequest="300"
                    Source="comed_logo_hrz_sm_wht_rgb.png"
                    HorizontalOptions="Center" />
+            
             <StackLayout Margin="20">
-                <Entry Placeholder="Exelon ID" />
-                <Entry Placeholder="Exelon Password" IsPassword="True" />
+                <Label Text="{Binding Message}"
+                       IsVisible="False" 
+                       TextColor="White" />
+                
+                <Entry Placeholder="Exelon ID" 
+                       Text="{Binding CompassAuthenticationRequest.UserID}"
+                       PlaceholderColor="White" />
+                <Label x:Name="CompassAuthenticationRequest_UserIDError"
+                       IsVisible="False" 
+                       TextColor="White" />
+
+                <Entry Placeholder="Exelon Password" 
+                       IsPassword="True" 
+                       Text="{Binding CompassAuthenticationRequest.Password}"
+                       PlaceholderColor="White" />
+                <Label x:Name="CompassAuthenticationRequest_PasswordError"
+                       IsVisible="False" 
+                       TextColor="White" />
+                
+                <StackLayout Orientation="Horizontal">
+                    <Switch IsToggled="{Binding CompassAuthenticationRequest.RememberMe}" 
+                            HorizontalOptions="Start" />
+                    <Label Text="Remember Me" 
+                           HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                </StackLayout>
+                
                 <Button Text="Login"
                         HorizontalOptions="Fill"
                         BackgroundColor="LightGray"
                         TextColor="#CC0033"
                         FontAttributes="Bold"
+                        Command="{Binding LoginCommand}"
                         Margin="0,20,0,0"
                         />
             </StackLayout>
