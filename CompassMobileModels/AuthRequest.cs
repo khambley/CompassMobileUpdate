@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CompassMobileModels
 {
-    public class CompassAuthenticationRequest
+    public class AuthRequest
     {
         [Required]
         public string UserID { get; set; }

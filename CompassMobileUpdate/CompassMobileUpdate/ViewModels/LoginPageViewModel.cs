@@ -4,6 +4,7 @@ using CompassMobileUpdate.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -14,7 +15,7 @@ namespace CompassMobileUpdate.ViewModels
     {
         private AppService _appService = new AppService();
 
-        public CompassAuthenticationRequest CompassAuthenticationRequest { get; set; } = new CompassAuthenticationRequest();
+        public AuthRequest authRequest { get; set; } = new AuthRequest();
         public ICommand LoginCommand { get; }
 
         private Page _page;
@@ -27,8 +28,31 @@ namespace CompassMobileUpdate.ViewModels
 
         private async Task LoginAsync()
         {
-            if (!ValidationHelper.IsFormValid(CompassAuthenticationRequest, _page)) { return; }
-            await _page.DisplayAlert("Success", "Validation Success!", "OK");
+            if (!ValidationHelper.IsFormValid(authRequest, _page)) { return; }
+            var currentUser = new AuthRequest()
+            {
+                UserID = authRequest.UserID,
+                Password = authRequest.Password,
+                RememberMe = authRequest.RememberMe
+            };
+
+            AuthResponse response = null;
+
+            bool cancelled = false;
+
+            CancellationTokenSource cts = new CancellationTokenSource();
+
+            cts.CancelAfter(60000);
+
+            try
+            {
+                //response = await  
+            }
+            catch
+            {
+
+            }
+            //await _page.DisplayAlert("Success", "Validation Success!", "OK");
         }
         private async Task ShowAlert()
         {

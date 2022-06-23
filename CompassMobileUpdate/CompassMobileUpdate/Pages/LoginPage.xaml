@@ -18,22 +18,22 @@
                        TextColor="White" />
                 
                 <Entry Placeholder="Exelon ID" 
-                       Text="{Binding CompassAuthenticationRequest.UserID}"
+                       Text="{Binding authRequest.UserID}"
                        PlaceholderColor="White" />
-                <Label x:Name="CompassAuthenticationRequest_UserIDError"
+                <Label x:Name="AuthRequest_UserIDError"
                        IsVisible="False" 
                        TextColor="White" />
 
                 <Entry Placeholder="Exelon Password" 
                        IsPassword="True" 
-                       Text="{Binding CompassAuthenticationRequest.Password}"
+                       Text="{Binding authRequest.Password}"
                        PlaceholderColor="White" />
-                <Label x:Name="CompassAuthenticationRequest_PasswordError"
+                <Label x:Name="AuthRequest_PasswordError"
                        IsVisible="False" 
                        TextColor="White" />
                 
                 <StackLayout Orientation="Horizontal">
-                    <Switch IsToggled="{Binding CompassAuthenticationRequest.RememberMe}" 
+                    <Switch IsToggled="{Binding authRequest.RememberMe}" 
                             HorizontalOptions="Start" />
                     <Label Text="Remember Me" 
                            HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
