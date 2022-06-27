@@ -22,6 +22,24 @@ namespace CompassMobileUpdate.Services
         //    content.Headers.Add("X-API-KEY", "B2BB5894FE9211E5CAAF893377B1F6EC5A5702147B6A9D276DAEEEDB9912A2D0");
         //}
 
+        // From AppVariables L77: may need to add headers here. The old way is below, new way is here, https://restsharp.dev/v107/#headers
+        //AuthorizationHeaderParameter = new RestSharp.Parameter() 
+        //    {
+        //        Type = RestSharp.ParameterType.HttpHeader,
+        //        Name = "WWW-Authenticate",
+        //        Value = "Required"
+        //    };
+        //ExtendedJWTHeaderParameter = new RestSharp.Parameter()
+        //    {
+        //        Type = RestSharp.ParameterType.HttpHeader,
+        //        Name = "X-EXTENDED-JWT"
+        //    };
+        //// MAJ 12/18/2017 BEGIN
+        //CompassMaintenanceParameter = new RestSharp.Parameter()
+        //{
+        //    Type = RestSharp.ParameterType.HttpHeader,
+        //    Name = "compass-maintenance"
+        //};
         public async Task ShowMessage(string header, string message)
         {
             var config = new AlertConfig()
