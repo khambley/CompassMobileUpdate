@@ -1,5 +1,6 @@
 ﻿using CompassDataAccess;
 using CompassMobileModels;
+using CompassMobileUpdate.DataAccess;
 using CompassMobileUpdate.Models;
 using CompassMobileUpdate.Services;
 using System;
@@ -78,6 +79,13 @@ namespace CompassMobileUpdate
             _isResolvingByIP = true;
             //See documentation: https://restsharp.dev/v107/#headers new way of adding header parameters to request.
 
+
+            //Default to anonymous user
+            User = new AppUser("Anonymous");
+
+            //This flag is set in Settings in app. (DEV only)
+            AppEnvironment = AppEnvironment.Production;
+
             _localSql = new LocalSql();
             _defaultFadeMs = 3000;
 
@@ -85,6 +93,26 @@ namespace CompassMobileUpdate
 
             ResetAppService();
             isInitalized = true;
+        }
+        public static string URI_COMPASS_Mobile_API_BaseURI
+        {
+            get
+            {
+                if (AppEnvironment == AppEnvironment.Development)
+                    //return "https://compassmobiledev.asee2comeddev01.p.azurewebsites.net/api/";
+                    return "https://compassmobiledev.azurewebsites.net/api/";
+                else if (AppEnvironment == AppEnvironment.Test)
+                    //return "https://compassmobiletest.asee2comeddev01.p.azurewebsites.net/api/";
+                    return "https://compassmobiletest.azurewebsites.net/api/";
+                //return "http://localhost:55818/api/";
+                else if (AppEnvironment == AppEnvironment.Production)
+                    //return "https://compassmobile.asee2comedprod01.p.azurewebsites.net/api/";
+                    //return "https://compassmobile.asee2comedprod02.p.azurewebsites.net/api/";
+                    return "https://compassmobile.azurewebsites.net/api/";
+                else
+                    throw new NotImplementedException("URI Not Set in AppConfig");
+
+            }
         }
         public static bool IsCachingMapPins
         {
@@ -119,6 +147,11 @@ namespace CompassMobileUpdate
         public static int DefaultFadeMs
         {
             get { return _defaultFadeMs; }
+        }
+
+        public static AppService AppService
+        {
+            get { return _appService; }
         }
 
         public static App Application
@@ -196,6 +229,13 @@ namespace CompassMobileUpdate
             subType.Add("did_subtype_lg_s4e");
             subType.Add("did_subtype_lg_s4e_han");
             return subType;
+        }
+        /// <summary>
+        /// Returns a to_lowered list of subtypes that cannot accept a PQR
+        /// </summary>
+        public static HashSet<string> DisallowedPQRSubTypeNames
+        {
+            get { return _disallowedPQRSubTypeNames; }
         }
     }
 }

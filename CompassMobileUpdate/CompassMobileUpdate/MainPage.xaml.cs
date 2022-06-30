@@ -13,6 +13,7 @@ namespace CompassMobileUpdate
         public MainPage()
         {
             InitializeComponent();
+            //TODO: Add Biometrics login functionality (enable option for user)
         }
     }
 }

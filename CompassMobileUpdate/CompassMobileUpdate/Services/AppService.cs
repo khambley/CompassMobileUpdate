@@ -1,28 +1,43 @@
 ﻿using Acr.UserDialogs;
 using CompassMobileModels;
-using Newtonsoft.Json;
+using CompassMobileUpdate.DataAccess;
+using CompassMobileUpdate.Helpers;
+using CompassMobileUpdate.Models;
+using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CompassMobileUpdate.Services
 {
+    using VoltageRule = LocalVoltageRule;
     public class AppService
     {
-        private string devBaseUrl = "https://compassmobiledev.azurewebsites.net/api/";
+        private string _devBaseUrl = "https://compassmobiledev.azurewebsites.net/api/";
+        private string _compassMobileAPIBaseURI;
+        public AppService()
+        {
+            //TODO: may need to add validation for SSL callback ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+            string uri = AppVariables.URI_COMPASS_Mobile_API_BaseURI;
 
-        //public async Task<AuthResponse> Authenticate(AuthRequest currentUser, CancellationToken token)
-        //{
-        //    var client = new HttpClient();
-        //    var json = JsonConvert.SerializeObject(currentUser);
-        //    StringContent content = new StringContent(json);
-        //    content.Headers.Add("X-API-KEY", "B2BB5894FE9211E5CAAF893377B1F6EC5A5702147B6A9D276DAEEEDB9912A2D0");
-        //}
+            if (Uri.IsWellFormedUriString(uri, UriKind.Absolute))
+                _compassMobileAPIBaseURI = uri;
+            else
+                throw new UriFormatException("COMPASS_Mobile_GetMetersWithinXRadius URI is badly formed");
+        }
+        public async Task<AuthResponse> Authenticate(AuthRequest currentUser, CancellationToken token)
+        {
+            var client = new RestClient(_compassMobileAPIBaseURI);
+            var request = new CompassMobileRestRequest("Authentication/", Method.Post);
+            request.RequestFormat = DataFormat.Json;
+            request.AddBody(currentUser);
+            var result = await CompassMobileRestClientExtensions.CompassExecuteTaskAsync<AuthResponse>(client, request, token);
+            return result;
+        }
 
-        // From AppVariables L77: may need to add headers here. The old way is below, new way is here, https://restsharp.dev/v107/#headers
+
+
+        //TODO: From AppVariables L77: may need to add headers here. The old way is below, new way is here, https://restsharp.dev/v107/#headers
         //AuthorizationHeaderParameter = new RestSharp.Parameter() 
         //    {
         //        Type = RestSharp.ParameterType.HttpHeader,
@@ -50,6 +65,74 @@ namespace CompassMobileUpdate.Services
             };
 
             await UserDialogs.Instance.AlertAsync(config);
+        }
+        public async void LogApplicationError(string source, Exception ex)
+        {
+            try
+            {
+                string userID = "Unknown";
+                if (AppVariables.User != null)
+                {
+                    userID = AppVariables.User.UserID;
+                }
+
+                string appendedMessage = string.Empty;
+                try
+                {
+                    //Xamarin.Insights.Report(ex);
+                    //TODO: Implement App Center for Insights (Analytics and Crash Reports) Xamarin.Insights no longer supported.
+                    
+                }
+                catch (Exception ex1)
+                {
+                    appendedMessage = " Failed to write log to Xamarin insights: " + AppHelper.GetAmalgamatedExceptionMessage(ex1);
+                }
+
+                Exception current = ex;
+                int count = 0;
+
+                //Record all Exceptions and InnerExceptions
+                while (current != null)
+                {
+                    string message = string.Empty;
+                    if (count != 0)
+                    {
+                        message = "Inner Exception #" + count.ToString() + ": ";
+                    }
+
+                    message += current.Message;
+                    message += appendedMessage;
+
+                    string stackTrace = current.StackTrace;
+
+                    var client = new RestClient(_compassMobileAPIBaseURI);
+                    var request = new CompassMobileRestRequest("Error/", Method.Post);
+                    request.RequestFormat = DataFormat.Json;
+                    request.AddBody(new ApplicationError { ErrorType = ApplicationErrorType.Mobile, Source = source, Message = message, StackTrace = stackTrace, UserID = userID });
+
+                    var taskCompletionSource = new TaskCompletionSource<int>();
+
+                    try
+                    {
+                        await CompassMobileRestClientExtensions.CompassExecuteAsync<int>(client, request);
+                    }
+                    catch (Exception e)
+                    {
+                        //Xamarin.Insights.Report(e);
+                        //TODO: Implement App Center for Insights (Analytics and Crash Reports) Xamarin.Insights no longer supported.
+                    }
+                    finally
+                    {
+                        current = current.InnerException;
+                        count++;
+                    }
+                }
+            }
+            catch (Exception ex1)
+            {
+                AppLogger.LogErrorLocallyOnly(ex1);
+            }
+
         }
     }
 }
