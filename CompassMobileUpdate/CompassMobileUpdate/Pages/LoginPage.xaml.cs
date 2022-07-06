@@ -17,6 +17,7 @@ namespace CompassMobileUpdate.Pages
         {
             InitializeComponent();
             this.BindingContext = new LoginPageViewModel(this);
+            //TODO: Implement Remember My Login toggle
         }
     }
 }
