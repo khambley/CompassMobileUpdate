@@ -15,6 +15,8 @@ namespace CompassMobileUpdate.Pages
         public NavPage()
         {
             InitializeComponent();
+            //TODO: Add reusable resource dictionary standalone XAML file for one source styling.
+            //TODO: Add images and icon assets to iOS app.
         }
     }
 }

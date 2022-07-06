@@ -70,7 +70,9 @@ namespace CompassMobileUpdate
                 user.LastName = account.Properties["LastName"];
             }
             user.JWT = account.Properties["JWT"];
+
             user.JWTExpirationUTC = JWTHelper.GetExpirationTimeFromJWT(user.JWT);
+
             return user;
         }
     }

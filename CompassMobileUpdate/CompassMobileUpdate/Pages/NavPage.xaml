@@ -1,12 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CompassMobileUpdate.Pages.NavPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="NavPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="CompassMobileUpdate.Pages.NavPage"
+             BackgroundColor="#CC0033">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" IconImageSource="ic_settings.png" />
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Row 1-->
+        <Image Source="CompassMobile_white.PNG" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" />
+
+        <!--Row 2-->
+        <Label Text="Welcome to the COMPASS Mobile App. Select an option below:" TextColor="White" FontSize="Medium" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" />
+        
+        <Button Image="search_150px.png" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" BackgroundColor="#CC0033" Margin="20" />
+        <Label Text="Search" 
+               Grid.Row="2" 
+               Grid.Column="0" 
+               TextColor="White"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" 
+               VerticalTextAlignment="End" 
+               FontSize="Large" />
+
+        <Button Image="barcode_150px.png" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" BackgroundColor="#CC0033" Margin="20" />
+        <Label Grid.Row="2" Grid.Column="1"
+               Text="Scan" 
+               TextColor="White"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" 
+               VerticalOptions="End" />
+
+        <!--Row 3-->
+        <Button Image="map_pin_150px.png" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" BackgroundColor="#CC0033" Margin="20" />
+        <Label Grid.Row="3" Grid.Column="0"
+               Text="Map" 
+               TextColor="White"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" 
+               VerticalOptions="End" />
+
+        <Button Image="envelope_150px.png" Grid.Row="3" Grid.Column="1" BackgroundColor="#CC0033" />
+        <Label Grid.Row="3" Grid.Column="1"
+               Text="Feedback" 
+               TextColor="White"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" 
+               VerticalOptions="End" />
+
+        <!--<Button Image="settings_150px.png" 
+                Grid.Row="3" 
+                Grid.Column="0"
+                BackgroundColor="#CC0033" 
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Margin="25,10,10,10"
+                 />
+        
+        <Label Grid.Row="3" Grid.Column="1"
+               Text="Settings" 
+               TextColor="White"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Start" 
+               VerticalOptions="Center"
+               />-->
+    </Grid>
 </ContentPage>
