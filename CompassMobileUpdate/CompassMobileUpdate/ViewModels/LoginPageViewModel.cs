@@ -29,7 +29,7 @@ namespace CompassMobileUpdate.ViewModels
         private async Task LoginAsync()
         {
             if (!ValidationHelper.IsFormValid(authRequest, _page)) { return; }
-            var currentUser = new AuthRequest()
+            var currentUserCredentials = new AuthRequest()
             {
                 UserID = authRequest.UserID,
                 Password = authRequest.Password,
@@ -38,7 +38,7 @@ namespace CompassMobileUpdate.ViewModels
 
             AuthResponse response = null;
 
-            bool cancelled = false;
+            var cancelled = false;
 
             CancellationTokenSource cts = new CancellationTokenSource();
 
@@ -46,11 +46,13 @@ namespace CompassMobileUpdate.ViewModels
 
             try
             {
-                //response = await  
+                //TODO: Add internet connection check here.
+                response = await _appService.Authenticate(currentUserCredentials, cts.Token);
             }
             catch
             {
-
+                await _page.DisplayAlert("Service Error", "The Service timed out. Please check your connection and try again.", "Close");
+                cancelled = true;
             }
             //await _page.DisplayAlert("Success", "Validation Success!", "OK");
         }

@@ -64,6 +64,7 @@ namespace CompassMobileUpdate
 
         protected override void OnResume()
         {
+            CheckJWTExpiration();
         }
     }
 }
