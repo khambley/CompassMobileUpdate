@@ -11,17 +11,14 @@ using Xamarin.Forms.Xaml;
 namespace CompassMobileUpdate.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NavPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public NavPage()
+        public SettingsPage()
         {
             InitializeComponent();
-            var viewModel = new NavPageViewModel();
+            var viewModel = new SettingsPageViewModel();
             viewModel.Navigation = Navigation;
             BindingContext = viewModel;
-            //TODO: Add reusable resource dictionary standalone XAML file for one source styling.
-            //TODO: Add images and icon assets to iOS app.
-            
         }
     }
 }

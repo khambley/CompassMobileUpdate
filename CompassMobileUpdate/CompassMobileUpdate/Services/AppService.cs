@@ -3,10 +3,13 @@ using CompassMobileModels;
 using CompassMobileUpdate.DataAccess;
 using CompassMobileUpdate.Helpers;
 using CompassMobileUpdate.Models;
+using CompassMobileUpdate.Pages;
 using RestSharp;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace CompassMobileUpdate.Services
 {
@@ -14,7 +17,11 @@ namespace CompassMobileUpdate.Services
     public class AppService
     {
         private string _devBaseUrl = "https://compassmobiledev.azurewebsites.net/api/";
+
         private string _compassMobileAPIBaseURI;
+
+        private INavigation Navigation { get; set; }
+
         public AppService()
         {
             //TODO: may need to add validation for SSL callback ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
@@ -34,7 +41,7 @@ namespace CompassMobileUpdate.Services
             var result = await CompassMobileRestClientExtensions.CompassExecuteTaskAsync<AuthResponse>(client, request, token);
             return result;
         }
-
+        
 
 
         //TODO: From AppVariables L77: may need to add headers here. The old way is below, new way is here, https://restsharp.dev/v107/#headers

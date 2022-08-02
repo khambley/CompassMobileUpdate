@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CompassMobileUpdate.Pages.SettingsPage"
+             Title="Settings">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" 
+                     IconImageSource="ic_settings.png"
+                     Command="{Binding SettingsButtonCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout VerticalOptions="CenterAndExpand"
+                 Margin="20,0,20,0">
+        <Button Text="View Logs" 
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#CC0033"
+                TextColor="White"
+                />
+        <Button Text="Logout" 
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#CC0033"
+                TextColor="White"
+                Command="{Binding LogoutButtonCommand}"
+                />
+        <Button Text="Force Customer Info Update" 
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#CC0033"
+                TextColor="White"
+                />
+        <Button Text="Resync Voltage Rules" 
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#CC0033"
+                TextColor="White"
+                />
+    </StackLayout>
+</ContentPage>

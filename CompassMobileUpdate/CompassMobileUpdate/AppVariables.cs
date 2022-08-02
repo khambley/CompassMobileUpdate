@@ -99,16 +99,16 @@ namespace CompassMobileUpdate
             get
             {
                 if (AppEnvironment == AppEnvironment.Development)
-                    //return "https://compassmobiledev.asee2comeddev01.p.azurewebsites.net/api/";
-                    return "https://compassmobiledev.azurewebsites.net/api/";
+                    return "https://compassmobiledev.asee2comeddev01.p.azurewebsites.net/api/";
+                    //return "https://compassmobiledev.azurewebsites.net/api/";
                 else if (AppEnvironment == AppEnvironment.Test)
-                    //return "https://compassmobiletest.asee2comeddev01.p.azurewebsites.net/api/";
-                    return "https://compassmobiletest.azurewebsites.net/api/";
+                    return "https://compassmobiletest.asee2comeddev01.p.azurewebsites.net/api/";
+                    //return "https://compassmobiletest.azurewebsites.net/api/";
                 //return "http://localhost:55818/api/";
                 else if (AppEnvironment == AppEnvironment.Production)
-                    //return "https://compassmobile.asee2comedprod01.p.azurewebsites.net/api/";
+                    return "https://compassmobile.asee2comedprod01.p.azurewebsites.net/api/";
                     //return "https://compassmobile.asee2comedprod02.p.azurewebsites.net/api/";
-                    return "https://compassmobile.azurewebsites.net/api/";
+                    //return "https://compassmobile.azurewebsites.net/api/";
                 else
                     throw new NotImplementedException("URI Not Set in AppConfig");
 

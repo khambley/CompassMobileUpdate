@@ -1,5 +1,6 @@
 ﻿using CompassMobileModels;
 using CompassMobileUpdate.Helpers;
+using CompassMobileUpdate.Pages;
 using CompassMobileUpdate.Services;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,33 @@ namespace CompassMobileUpdate.ViewModels
                 await _page.DisplayAlert("Service Error", "The Service timed out. Please check your connection and try again.", "Close");
                 cancelled = true;
             }
-            //await _page.DisplayAlert("Success", "Validation Success!", "OK");
+            if (response != null)
+            {
+                if (response.IsAuthenticated)
+                {
+                    var user = new AppUser(currentUserCredentials.UserID)
+                    {
+                        FirstName = response.FirstName,
+                        LastName = response.LastName,
+                        JWT = response.Token,
+                        JWTExpirationUTC = JWTHelper.GetExpirationTimeFromJWT(response.Token)
+                    };
+
+                    AppVariables.User = user;
+                    await AppVariables.LocalAppSql.AddUser(AppVariables.User);
+                    //TODO: Implement App Center for Insights (Analytics and Crash Reports) Xamarin.Insights no longer supported.
+
+                    App.Current.MainPage = new NavigationPage(new NavPage())
+                    {
+                        
+                    };
+                }
+            }
+            else
+            {
+                await _page.DisplayAlert("Authentication Error", response.Message, "Close");
+            }
+            //if(App.Current.MainPage is LoginPage)
         }
         private async Task ShowAlert()
         {

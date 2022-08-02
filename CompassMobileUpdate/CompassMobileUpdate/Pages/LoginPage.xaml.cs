@@ -13,11 +13,23 @@ namespace CompassMobileUpdate.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        public LoginPage()
+        bool _IsSessionTimeout = false;
+        public LoginPage(bool isSessionTimeout)
         {
+            _IsSessionTimeout = isSessionTimeout;
             InitializeComponent();
             this.BindingContext = new LoginPageViewModel(this);
             //TODO: Implement Remember My Login toggle
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_IsSessionTimeout)
+            {
+                DisplayAlert("Session Timeout", "Please authenticate.", "Close");
+            }
+
         }
     }
 }

@@ -25,7 +25,7 @@ namespace CompassMobileUpdate
 
                 if(AppVariables.User == null || JWTIsExpired)
                 {
-                    MainPage = new LoginPage();
+                    MainPage = new LoginPage(false);
                 }
                 else
                 {

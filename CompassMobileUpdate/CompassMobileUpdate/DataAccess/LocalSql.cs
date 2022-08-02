@@ -17,8 +17,9 @@ namespace CompassMobileUpdate.DataAccess
         static object _databaseLock = new Object();
         SQLiteAsyncConnection _database;
 
-        //TODO: Use Xamarin.Essentials SecureStorage instead. AccountStore is depreciated in latest Xamarin.
-        AccountStore _store;
+        //TODO: DONE - Use Xamarin.Essentials SecureStorage instead. AccountStore is depreciated in latest Xamarin.
+        //AccountStore _store;
+        
         
         const string _authService = "com.exeloncorp.compass";
 
@@ -57,6 +58,19 @@ namespace CompassMobileUpdate.DataAccess
                 return null;
             }
         }
+        public async Task<bool> AddUser(AppUser appUser)
+        {
+            try
+            {
+                await SecureStorageAccountStore.SaveAsync(appUser.GetAccountFromUser(), _authService);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+       
         public List<Account> FindAccountsForServiceAsync(string serviceName)
         {
             // Get json for accounts for the service
