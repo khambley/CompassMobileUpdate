@@ -12,13 +12,33 @@ using Xamarin.Forms;
 
 namespace CompassMobileUpdate.ViewModels
 {
-    public class LoginPageViewModel
+    public class LoginPageViewModel : ViewModelBase
     {
         private AppService _appService = new AppService();
 
         public AuthRequest authRequest { get; set; } = new AuthRequest();
         public ICommand LoginCommand { get; }
 
+        private bool _isLoading, _isVisible;
+        public bool IsLoading
+        {
+            get => _isLoading;
+            set
+            {
+                _isLoading = value;
+                OnPropertyChanged("IsLoading");
+            }
+        }
+
+        public bool IndicatorVisiblity
+        {
+            get => _isVisible;
+            set
+            {
+                _isVisible = value;
+                OnPropertyChanged("IndicatorVisiblity");
+            }
+        }
         private Page _page;
 
         public LoginPageViewModel(Page page)
@@ -29,6 +49,8 @@ namespace CompassMobileUpdate.ViewModels
 
         private async Task LoginAsync()
         {
+            IsLoading = true;
+            IndicatorVisiblity = true;
             if (!ValidationHelper.IsFormValid(authRequest, _page)) { return; }
             var currentUserCredentials = new AuthRequest()
             {
@@ -71,10 +93,9 @@ namespace CompassMobileUpdate.ViewModels
                     await AppVariables.LocalAppSql.AddUser(AppVariables.User);
                     //TODO: Implement App Center for Insights (Analytics and Crash Reports) Xamarin.Insights no longer supported.
 
-                    App.Current.MainPage = new NavigationPage(new NavPage())
-                    {
-                        
-                    };
+                    App.Current.MainPage = new NavigationPage(new NavPage());
+                    IsLoading = false;
+                    IndicatorVisiblity = false;
                 }
             }
             else

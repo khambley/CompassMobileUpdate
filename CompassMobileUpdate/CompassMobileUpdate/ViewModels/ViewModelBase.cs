@@ -10,7 +10,7 @@ namespace CompassMobileUpdate.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void RaisePropertyChanged(params string[] propertyNames)
+        public void OnPropertyChanged(params string[] propertyNames)
         {
             foreach (var propertyName in propertyNames)
             {

@@ -11,6 +11,15 @@
                    WidthRequest="300"
                    Source="comed_logo_hrz_sm_wht_rgb.png"
                    HorizontalOptions="Center" />
+
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <ActivityIndicator HorizontalOptions="CenterAndExpand"
+                                   IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IndicatorVisibility}"
+                                   BackgroundColor="Transparent"
+                                   Color="White"
+                                   />
+            </StackLayout>
             
             <StackLayout Margin="20">
                 <Label Text="{Binding Message}"
@@ -38,7 +47,7 @@
                     <Label Text="Remember Me" 
                            HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
                 </StackLayout>
-                
+
                 <Button Text="Login"
                         HorizontalOptions="Fill"
                         BackgroundColor="LightGray"
