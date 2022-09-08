@@ -9,8 +9,53 @@
                      Command="{Binding SettingsButtonCommand}" />
     </ContentPage.ToolbarItems>
     
-    <StackLayout VerticalOptions="CenterAndExpand"
-                 Margin="20,0,20,0">
+    <StackLayout VerticalOptions="StartAndExpand"
+                 Margin="20,20,20,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" 
+                   Grid.Row="0" 
+                   Text="Environment"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center" />
+            
+            <Picker x:Name="envPicker"
+                    Grid.Column="1" 
+                    Grid.Row="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalTextAlignment="Center"
+                    BackgroundColor="LightGray">
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Development</x:String>
+                        <x:String>Test</x:String>
+                        <x:String>Production</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Grid.Column="0" 
+                   Grid.Row="1" 
+                   Text="Is Logging"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Switch Grid.Column="1" 
+                    Grid.Row="1"
+                    HorizontalOptions="StartAndExpand" />
+        </Grid>
         <Button Text="View Logs" 
                 HorizontalOptions="FillAndExpand"
                 BackgroundColor="#CC0033"
