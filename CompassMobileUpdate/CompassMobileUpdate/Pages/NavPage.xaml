@@ -16,6 +16,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*" />
@@ -23,23 +24,52 @@
         </Grid.ColumnDefinitions>
 
         <!--Row 1-->
-        <Image Source="CompassMobile_white.PNG" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" />
+        <Image Source="CompassMobile_white.PNG" 
+               Grid.Row="0" 
+               Grid.Column="0" 
+               Grid.ColumnSpan="2" 
+               Margin="10,0,10,0" />
 
         <!--Row 2-->
-        <Label Text="Welcome to the COMPASS Mobile App. Select an option below:" TextColor="White" FontSize="Medium" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" />
+        <Label Text="ComEd Outage Management Power Analysis Software System" 
+               TextColor="White" 
+               FontSize="Medium"
+               Grid.Row="1" 
+               Grid.Column="0" 
+               Grid.ColumnSpan="2" 
+               HorizontalTextAlignment="Center" />
         
-        <Button Image="search_150px.png" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" BackgroundColor="#CC0033" Margin="20" />
+        <!--Row 3-->
+        <Button Image="search_150px.png" 
+                Grid.Row="2" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center" 
+                BackgroundColor="#CC0033" 
+                Margin="20" />
+        
         <Label Text="Search" 
                Grid.Row="2" 
-               Grid.Column="0" 
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
                TextColor="White"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center" 
                VerticalTextAlignment="End" 
                FontSize="Large" />
-
-        <Button Image="barcode_150px.png" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" BackgroundColor="#CC0033" Margin="20" />
-        <Label Grid.Row="2" Grid.Column="1"
+        
+        <!--Row 4-->
+        <Button Image="barcode_150px.png" 
+                Grid.Row="3" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center" 
+                BackgroundColor="#CC0033" 
+                Margin="20" />
+        
+        <Label Grid.Row="3" 
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
                Text="Scan" 
                TextColor="White"
                FontSize="Large"
@@ -47,9 +77,18 @@
                HorizontalTextAlignment="Center" 
                VerticalOptions="End" />
 
-        <!--Row 3-->
-        <Button Image="map_pin_150px.png" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" BackgroundColor="#CC0033" Margin="20" />
-        <Label Grid.Row="3" Grid.Column="0"
+        <!--Row 5-->
+        <Button Image="map_pin_150px.png" 
+                Grid.Row="4" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center" 
+                BackgroundColor="#CC0033" 
+                Margin="20" />
+        
+        <Label Grid.Row="4" 
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
                Text="Map" 
                TextColor="White"
                FontSize="Large"
@@ -57,14 +96,14 @@
                HorizontalTextAlignment="Center" 
                VerticalOptions="End" />
 
-        <Button Image="envelope_150px.png" Grid.Row="3" Grid.Column="1" BackgroundColor="#CC0033" />
+        <!--<Button Image="envelope_150px.png" Grid.Row="3" Grid.Column="1" BackgroundColor="#CC0033" />
         <Label Grid.Row="3" Grid.Column="1"
-               Text="Feedback" 
+               Text="Contact" 
                TextColor="White"
                FontSize="Large"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center" 
-               VerticalOptions="End" />
+               VerticalOptions="End" />-->
 
         <!--<Button Image="settings_150px.png" 
                 Grid.Row="3" 
